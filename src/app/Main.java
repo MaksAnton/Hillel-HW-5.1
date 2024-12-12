@@ -15,20 +15,21 @@ public class Main {
         double totalProfit = scanner.nextDouble();
 
         // Initialize variables
-        double taxSum ;
+        double taxSum = 0;
         double interestRate = 0;
         double limit = 0;
 
         // Calculate tax amount
         if (totalProfit > limit && totalProfit <= (limit = 10000)) {
             interestRate = 2.5;
+            taxSum = (totalProfit * interestRate) / 100;
         } else if (totalProfit > limit && totalProfit <= (limit = 25000)) {
             interestRate = 4.3;
+            taxSum = (totalProfit * interestRate) / 100;
         } else if (totalProfit > limit) {
             interestRate = 6.7;
+            taxSum = (totalProfit * interestRate) / 100;
         }
-
-        taxSum = (totalProfit * interestRate) / 100;
 
         // Display the result
         if (totalProfit > 0) {
