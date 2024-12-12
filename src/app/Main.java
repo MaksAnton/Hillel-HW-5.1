@@ -15,29 +15,37 @@ public class Main {
         double totalProfit = scanner.nextDouble();
 
         // Initialize variables
-        double taxSum = 0;
-        double interestRate = 0;
+        double taxSum ;
+        double interestRate ;
         double limit = 0;
 
         // Calculate tax amount
-        if (totalProfit > limit && totalProfit <= (limit = 10000)) {
+        if (totalProfit < 0){
+            System.out.println("You have no income, the tax doesn't apply!!!");
+        } else if (totalProfit > limit && totalProfit <= (limit = 10000)) {
             interestRate = 2.5;
             taxSum = (totalProfit * interestRate) / 100;
+            System.out.printf("%.1f%s tax is withheld from your income of %.2f %s, which is %.2f %s.%n",
+                    interestRate, PERCENT_SYMBOL, totalProfit, CURRENCY_USD, taxSum, CURRENCY_USD);
         } else if (totalProfit > limit && totalProfit <= (limit = 25000)) {
             interestRate = 4.3;
             taxSum = (totalProfit * interestRate) / 100;
+            System.out.printf("%.1f%s tax is withheld from your income of %.2f %s, which is %.2f %s.%n",
+                    interestRate, PERCENT_SYMBOL, totalProfit, CURRENCY_USD, taxSum, CURRENCY_USD);
         } else if (totalProfit > limit) {
             interestRate = 6.7;
             taxSum = (totalProfit * interestRate) / 100;
+            System.out.printf("%.1f%s tax is withheld from your income of %.2f %s, which is %.2f %s.%n",
+                    interestRate, PERCENT_SYMBOL, totalProfit, CURRENCY_USD, taxSum, CURRENCY_USD);
         }
 
         // Display the result
-        if (totalProfit > 0) {
-            System.out.printf("%.1f%s tax is withheld from your income of %.2f %s, which is %.2f %s.%n",
-                    interestRate, PERCENT_SYMBOL, totalProfit, CURRENCY_USD, taxSum, CURRENCY_USD);
-        } else {
-            System.out.println("You have no income, the tax doesn't apply!!!");
-        }
+//        if (totalProfit > 0) {
+//            System.out.printf("%.1f%s tax is withheld from your income of %.2f %s, which is %.2f %s.%n",
+//                    interestRate, PERCENT_SYMBOL, totalProfit, CURRENCY_USD, taxSum, CURRENCY_USD);
+//        } else {
+//            System.out.println("You have no income, the tax doesn't apply!!!");
+//        }
 
         // Close the scanner
         scanner.close();
